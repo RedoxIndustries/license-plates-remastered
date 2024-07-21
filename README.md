@@ -9,3 +9,8 @@ Plaques d'immatriculations remasterisé pour MyParisCity
 > {pos = Vector(0, 114.1, 22), ang = Angle(0, 180, 91), plaquetype = "avant", bg = {id = false, val = {}}}, -- Position de la plaque avant
 > {pos = Vector(-18, -115.8, 38.3), ang = Angle(0, 0, 82), plaquetype = "arriere", bg = {id = false, val = {}}}) -- Position de la plaque arrière
 > ```
+
+> [!IMPORTANT]
+> Pour ajouter une plaque de la bspp :\
+> La variable `plaquetype` doit être égale à `bspp-` + le début de la plaque.\
+> Par exemple, `bspp-spvl` donnera le plaque `SPVL 451`

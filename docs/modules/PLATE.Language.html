@@ -1,0 +1,517 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<head>
+    <title>Reference</title>
+    <link rel="stylesheet" href="../ldoc.css" type="text/css" />
+    <link rel="stylesheet" href="../glua.css" type="text/css" />
+</head>
+<body>
+
+<div id="container">
+
+<div id="product">
+	<div id="product_logo"></div>
+	<div id="product_name"><big><b></b></big></div>
+	<div id="product_description"></div>
+</div> <!-- id="product" -->
+
+
+<div id="main">
+
+
+<!-- Menu -->
+
+<div id="navigation">
+<br/>
+<h1>L² Plates</h1>
+
+<ul>
+  <li><a href="../index.html">Index</a></li>
+</ul>
+
+<h2>Contents</h2>
+<ul>
+<li><a href="#Functions">Functions</a></li>
+</ul>
+
+
+<h2>Modules</h2>
+<ul class="nowrap">
+  <li><a href="../modules/PLATE.html">PLATE</a></li>
+  <li><a href="../modules/PLATE.Config.html">PLATE.Config</a></li>
+  <li><a href="../modules/ll_plates.conf_vehicles.html">ll_plates.conf_vehicles</a></li>
+  <li><a href="../modules/PLATE.Debugging.html">PLATE.Debugging</a></li>
+  <li><strong>PLATE.Language</strong></li>
+  <li><a href="../modules/xAdmin.html">xAdmin</a></li>
+</ul>
+<h2>Classes</h2>
+<ul class="nowrap">
+  <li><a href="../classes/Plates_NPC.html">Plates_NPC</a></li>
+  <li><a href="../classes/lang.html">lang</a></li>
+  <li><a href="../classes/plural.html">plural</a></li>
+  <li><a href="../classes/rule.html">rule</a></li>
+</ul>
+<h2>Topics</h2>
+<ul class="">
+  <li><a href="../topics/backgrounds.md.html">backgrounds</a></li>
+  <li><a href="../topics/new-plates.md.html">new-plates</a></li>
+  <li><a href="../topics/seasonal-plates.md.html">seasonal-plates</a></li>
+</ul>
+
+</div>
+
+<div id="content">
+
+<h1>Module <code>PLATE.Language</code></h1>
+<p>License Plate Language Handler</p>
+<p>
+
+</p>
+    <h3>Info:</h3>
+    <ul>
+        <li><strong>Copyright</strong>: 2020 Limelight Gaming</li>
+        <li><strong>Release</strong>: 3.9.0</li>
+        <li><strong>Author</strong>: John Internet</li>
+    </ul>
+
+
+<h2><a href="#Functions">Functions</a></h2>
+<table class="function_list">
+	<tr>
+	<td class="name" nowrap><a href="#GetKey"><span class='state state-client state-server'>GetKey(bind[, default])</span></a></td>
+	<td class="summary">Get a given key for a binding.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Exists"><span class='state state-client state-server'>Exists(code)</span></a></td>
+	<td class="summary">Check if a language code exists.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#PhraseExists"><span class='state state-client state-server'>PhraseExists(code, key)</span></a></td>
+	<td class="summary">Check if a language phrase exists.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#AddLanguage"><span class='state state-client state-server'>AddLanguage(code)</span></a></td>
+	<td class="summary">Adds an empty language.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#AddPhrase"><span class='state state-client state-server'>AddPhrase(code, key, phrase)</span></a></td>
+	<td class="summary">Add a phrase to a language.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#GetLanguage"><span class='state state-client state-server'>GetLanguage(code)</span></a></td>
+	<td class="summary">Get a language with a given code.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#GetLanguagePhrase"><span class='state state-client state-server'>GetLanguagePhrase(code, key)</span></a></td>
+	<td class="summary">Get a phrase from a language.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#PluralExists"><span class='state state-client state-server'>PluralExists(code, key)</span></a></td>
+	<td class="summary">Check if a language phrase exists.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#GetLanguagePlural"><span class='state state-client state-server'>GetLanguagePlural(code, key)</span></a></td>
+	<td class="summary">Get a plural from a language.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Localise"><span class='state state-client state-server'>Localise(code, key[, fallback])</span></a></td>
+	<td class="summary">Get a localised version of a string.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#LocalisePlural"><span class='state state-client state-server'>LocalisePlural(code, key[, fallback])</span></a></td>
+	<td class="summary">Get a localised version of a plural.</td>
+	</tr>
+</table>
+
+<br/>
+<br/>
+
+
+    <h2 class="section-header "><a name="Functions"></a>Functions</h2>
+
+    <dl class="function">
+    <dt>
+    <a name = "GetKey"></a>
+    <strong><span class='state state-client state-server'>GetKey(bind[, default])</span></strong>
+    </dt>
+    <dd>
+    Get a given key for a binding.
+
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">bind</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
+         The bind (ex: +use) to search for.
+        </li>
+        <li><span class="parameter">default</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
+         Fallback value to display if no bind is found.
+         (<em>optional</em>)
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "Exists"></a>
+    <strong><span class='state state-client state-server'>Exists(code)</span></strong>
+    </dt>
+    <dd>
+    Check if a language code exists.
+
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">code</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
+         Language code.
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><span class="type">bool</span></span>
+        If the language code exists.
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "PhraseExists"></a>
+    <strong><span class='state state-client state-server'>PhraseExists(code, key)</span></strong>
+    </dt>
+    <dd>
+    Check if a language phrase exists.
+
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">code</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
+         Language code.
+        </li>
+        <li><span class="parameter">key</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
+         Phrase key.
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><span class="type">bool</span></span>
+        If the phrase exists within the language.
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "AddLanguage"></a>
+    <strong><span class='state state-client state-server'>AddLanguage(code)</span></strong>
+    </dt>
+    <dd>
+    Adds an empty language.
+
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">code</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
+         Language code to register under.
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "AddPhrase"></a>
+    <strong><span class='state state-client state-server'>AddPhrase(code, key, phrase)</span></strong>
+    </dt>
+    <dd>
+    Add a phrase to a language.
+
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">code</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
+         Language code.
+        </li>
+        <li><span class="parameter">key</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
+         Unique locisation key.
+        </li>
+        <li><span class="parameter">phrase</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
+         Localised phrase.
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "GetLanguage"></a>
+    <strong><span class='state state-client state-server'>GetLanguage(code)</span></strong>
+    </dt>
+    <dd>
+    Get a language with a given code.
+
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">code</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
+         Language code.
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><a class="type" href="../classes/lang.html#">lang</a></span>
+
+
+
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "GetLanguagePhrase"></a>
+    <strong><span class='state state-client state-server'>GetLanguagePhrase(code, key)</span></strong>
+    </dt>
+    <dd>
+    Get a phrase from a language.
+
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">code</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
+         Language code.
+        </li>
+        <li><span class="parameter">key</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
+         Unique localisation key.
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types">optional <a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
+        Localised string.
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "PluralExists"></a>
+    <strong><span class='state state-client state-server'>PluralExists(code, key)</span></strong>
+    </dt>
+    <dd>
+    Check if a language phrase exists.
+
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">code</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
+         Language code.
+        </li>
+        <li><span class="parameter">key</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
+         Phrase key.
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><span class="type">bool</span></span>
+        If the phrase exists within the language.
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "GetLanguagePlural"></a>
+    <strong><span class='state state-client state-server'>GetLanguagePlural(code, key)</span></strong>
+    </dt>
+    <dd>
+    Get a plural from a language.
+
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">code</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
+         Language code.
+        </li>
+        <li><span class="parameter">key</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
+         Unique localisation key.
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types">optional <a class="type" href="../classes/plural.html#">plural</a></span>
+        Plural
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "Localise"></a>
+    <strong><span class='state state-client state-server'>Localise(code, key[, fallback])</span></strong>
+    </dt>
+    <dd>
+    Get a localised version of a string.
+
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">code</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
+         Language code to fetch for.
+        </li>
+        <li><span class="parameter">key</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
+         Phrase key to fetch.
+        </li>
+        <li><span class="parameter">fallback</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
+         Fallback language key if the phrase doesn't exist here.
+         (<em>optional</em>)
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "LocalisePlural"></a>
+    <strong><span class='state state-client state-server'>LocalisePlural(code, key[, fallback])</span></strong>
+    </dt>
+    <dd>
+    Get a localised version of a plural.
+
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">code</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
+         Language code to fetch for.
+        </li>
+        <li><span class="parameter">key</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
+         Plural key to fetch.
+        </li>
+        <li><span class="parameter">fallback</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
+         Fallback language key if the plural doesn't exist here.
+         (<em>optional</em>)
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+</dl>
+
+
+</div> <!-- id="content" -->
+</div> <!-- id="main" -->
+<div id="about">
+<i>generated by <a href="http://github.com/stevedonovan/LDoc">LDoc 1.4.6</a></i>
+<i style="float:right;">Last updated 2020-12-14 12:46:10 </i>
+</div> <!-- id="about" -->
+</div> <!-- id="container" -->
+</body>
+</html>

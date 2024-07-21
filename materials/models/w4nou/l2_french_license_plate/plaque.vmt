@@ -1,0 +1,6 @@
+"VertexlitGeneric"
+{
+	"$basetexture" "models/w4nou/l2_french_license_plate/plaque"
+	"$bumpmap" "models/w4nou/l2_french_license_plate/plaque_nml"
+}
+

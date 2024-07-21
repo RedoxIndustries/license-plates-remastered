@@ -1,0 +1,972 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<head>
+    <title>Reference</title>
+    <link rel="stylesheet" href="../ldoc.css" type="text/css" />
+    <link rel="stylesheet" href="../glua.css" type="text/css" />
+</head>
+<body>
+
+<div id="container">
+
+<div id="product">
+	<div id="product_logo"></div>
+	<div id="product_name"><big><b></b></big></div>
+	<div id="product_description"></div>
+</div> <!-- id="product" -->
+
+
+<div id="main">
+
+
+<!-- Menu -->
+
+<div id="navigation">
+<br/>
+<h1>L² Plates</h1>
+
+<ul>
+  <li><a href="../index.html">Index</a></li>
+</ul>
+
+<h2>Contents</h2>
+<ul>
+<li><a href="#Derma_Settings">Derma Settings </a></li>
+<li><a href="#General_Settings">General Settings </a></li>
+<li><a href="#Material_Configs">Material Configs </a></li>
+<li><a href="#Plate_Configs">Plate Configs </a></li>
+<li><a href="#Exempt_Plate_Settings">Exempt Plate Settings </a></li>
+<li><a href="#Colours_and_Dates">Colours and Dates </a></li>
+</ul>
+
+
+<h2>Modules</h2>
+<ul class="nowrap">
+  <li><a href="../modules/PLATE.html">PLATE</a></li>
+  <li><strong>PLATE.Config</strong></li>
+  <li><a href="../modules/ll_plates.conf_vehicles.html">ll_plates.conf_vehicles</a></li>
+  <li><a href="../modules/PLATE.Debugging.html">PLATE.Debugging</a></li>
+  <li><a href="../modules/PLATE.Language.html">PLATE.Language</a></li>
+  <li><a href="../modules/xAdmin.html">xAdmin</a></li>
+</ul>
+<h2>Classes</h2>
+<ul class="nowrap">
+  <li><a href="../classes/Plates_NPC.html">Plates_NPC</a></li>
+  <li><a href="../classes/lang.html">lang</a></li>
+  <li><a href="../classes/plural.html">plural</a></li>
+  <li><a href="../classes/rule.html">rule</a></li>
+</ul>
+<h2>Topics</h2>
+<ul class="">
+  <li><a href="../topics/backgrounds.md.html">backgrounds</a></li>
+  <li><a href="../topics/new-plates.md.html">new-plates</a></li>
+  <li><a href="../topics/seasonal-plates.md.html">seasonal-plates</a></li>
+</ul>
+
+</div>
+
+<div id="content">
+
+<h1>Module <code>PLATE.Config</code></h1>
+<p>License Plate Misc Configs</p>
+<p>
+
+</p>
+    <h3>Info:</h3>
+    <ul>
+        <li><strong>Copyright</strong>: 2020 Limelight Gaming</li>
+        <li><strong>Release</strong>: 3.9.0</li>
+        <li><strong>Author</strong>: John Internet</li>
+    </ul>
+
+
+<h2><a href="#Derma_Settings">Derma Settings </a></h2>
+<table class="function_list">
+	<tr>
+	<td class="name" nowrap><a href="#PLATE.Config.DermaFrameCol">PLATE.Config.DermaFrameCol</a></td>
+	<td class="summary">The frame colour for the derma panel.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#PLATE.Config.DermaTextCol">PLATE.Config.DermaTextCol</a></td>
+	<td class="summary">The text colour for the derma panel.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#PLATE.Config.DermaBrandCol">PLATE.Config.DermaBrandCol</a></td>
+	<td class="summary">The brand / feature colour for the derma panel.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#PLATE.Config.DermaLightFrameCol">PLATE.Config.DermaLightFrameCol</a></td>
+	<td class="summary">The offset frame colour, for things like text inputs.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#PLATE.Config.DermaTextBGCol">PLATE.Config.DermaTextBGCol</a></td>
+	<td class="summary">The text background color.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#PLATE.Config.DermaTextBGColFocused">PLATE.Config.DermaTextBGColFocused</a></td>
+	<td class="summary">The text background color.</td>
+	</tr>
+</table>
+<h2><a href="#General_Settings">General Settings </a></h2>
+<table class="function_list">
+	<tr>
+	<td class="name" nowrap><a href="#PLATE.Config.DefaultFormat">PLATE.Config.DefaultFormat</a></td>
+	<td class="summary">The default format for the license plate.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#PLATE.Config.CurrencySymbol">PLATE.Config.CurrencySymbol</a></td>
+	<td class="summary">The symbol to use for currency.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#PLATE.Config.AllowChanges">PLATE.Config.AllowChanges</a></td>
+	<td class="summary">If custom plates are allowed.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#PLATE.Config.AllowEmergencyChanges">PLATE.Config.AllowEmergencyChanges</a></td>
+	<td class="summary">If custom plates for emergency vehicles are allowed.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#PLATE.Config.DisallowArrestChanges">PLATE.Config.DisallowArrestChanges</a></td>
+	<td class="summary">If a player has an arrest warrant, disallow them to change their plate.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#PLATE.Config.NPCHeadText">PLATE.Config.NPCHeadText</a></td>
+	<td class="summary">If the plate seller NPC should have text above them.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#PLATE.Config.Delay">PLATE.Config.Delay</a></td>
+	<td class="summary">Time in seconds between changes.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#PLATE.Config.FadeDist">PLATE.Config.FadeDist</a></td>
+	<td class="summary">Distance in source units for which the license plates fade out.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#PLATE.Config.MaxDist">PLATE.Config.MaxDist</a></td>
+	<td class="summary">Distance in source units for which you can change your plate.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#PLATE.Config.Cost">PLATE.Config.Cost</a></td>
+	<td class="summary">Cost to change the license plate for a vehicle.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#PLATE.Config.BindF3">PLATE.Config.BindF3</a></td>
+	<td class="summary">Bind F3 to open the menu if pressed whilst looking at a vehicle.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#PLATE.Config.MaxLength">PLATE.Config.MaxLength</a></td>
+	<td class="summary">Maximum length of a license plate.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#PLATE.Config.DoDebugPrints">PLATE.Config.DoDebugPrints</a></td>
+	<td class="summary">Whether the system will do debug prints.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#PLATE.Config.LimitPlateChangesToGroup">PLATE.Config.LimitPlateChangesToGroup</a></td>
+	<td class="summary">Set to true if only certain groups are allowed to change their license plates.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#PLATE.Config.PlateChangeGroups">PLATE.Config.PlateChangeGroups</a></td>
+	<td class="summary">The list of groups which are allowed to change their plates.</td>
+	</tr>
+</table>
+<h2><a href="#Material_Configs">Material Configs </a></h2>
+<table class="function_list">
+	<tr>
+	<td class="name" nowrap><a href="#PLATE.Config.Path">PLATE.Config.Path</a></td>
+	<td class="summary">Path to the plate textures.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#PLATE.Config.Version">PLATE.Config.Version</a></td>
+	<td class="summary">Version of the plates to use.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#PLATE.Config.DefaultPlate">PLATE.Config.DefaultPlate</a></td>
+	<td class="summary">The default license plate, if none other is selected.</td>
+	</tr>
+</table>
+<h2><a href="#Plate_Configs">Plate Configs </a></h2>
+<table class="function_list">
+	<tr>
+	<td class="name" nowrap><a href="#PLATE.Config.WidthScale">PLATE.Config.WidthScale</a></td>
+	<td class="summary">Width of plate at scale 1.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#PLATE.Config.HeightScale">PLATE.Config.HeightScale</a></td>
+	<td class="summary">Height of plate at scale 1.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#PLATE.Config.DefaultColour">PLATE.Config.DefaultColour</a></td>
+	<td class="summary">The default colour for plate text, if no other colour is defined.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#PLATE.Config.PlateDarken">PLATE.Config.PlateDarken</a></td>
+	<td class="summary">Decimal to darken the plate by.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#PLATE.Config.HeaderText">PLATE.Config.HeaderText</a></td>
+	<td class="summary">The header text to display over the plate.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#PLATE.Config.BlockedHide">PLATE.Config.BlockedHide</a></td>
+	<td class="summary">If plates should be hidden if behind a prop.</td>
+	</tr>
+</table>
+<h2><a href="#Exempt_Plate_Settings">Exempt Plate Settings </a></h2>
+<table class="function_list">
+	<tr>
+	<td class="name" nowrap><a href="#PLATE.Config.ParseVCEmergency">PLATE.Config.ParseVCEmergency</a></td>
+	<td class="summary">If we should parse VCMod Data to check emergency vehicles.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#PLATE.Emergency">PLATE.Emergency</a></td>
+	<td class="summary">Vehicle Categories / vehicle IDs which are deemed "emergency" vehicles, and get exempt plates.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#PLATE.EmergOverride">PLATE.EmergOverride</a></td>
+	<td class="summary">Vehicle Names which are in "emergency" categories, but shouldn't get plates.</td>
+	</tr>
+</table>
+<h2><a href="#Colours_and_Dates">Colours and Dates </a></h2>
+<table class="function_list">
+	<tr>
+	<td class="name" nowrap><a href="#PLATE.Colours">PLATE.Colours</a></td>
+	<td class="summary">List of plate paths and their colours.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#PLATE.Months">PLATE.Months</a></td>
+	<td class="summary">List of Plates by Month / Day</td>
+	</tr>
+</table>
+
+<br/>
+<br/>
+
+
+    <h2 class="section-header "><a name="Derma_Settings"></a>Derma Settings </h2>
+
+    <dl class="function">
+    <dt>
+    <a name = "PLATE.Config.DermaFrameCol"></a>
+    <strong>PLATE.Config.DermaFrameCol</strong>
+    </dt>
+    <dd>
+    The frame colour for the derma panel.
+
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "PLATE.Config.DermaTextCol"></a>
+    <strong>PLATE.Config.DermaTextCol</strong>
+    </dt>
+    <dd>
+    The text colour for the derma panel.
+
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "PLATE.Config.DermaBrandCol"></a>
+    <strong>PLATE.Config.DermaBrandCol</strong>
+    </dt>
+    <dd>
+    The brand / feature colour for the derma panel.
+
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "PLATE.Config.DermaLightFrameCol"></a>
+    <strong>PLATE.Config.DermaLightFrameCol</strong>
+    </dt>
+    <dd>
+    The offset frame colour, for things like text inputs.
+
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "PLATE.Config.DermaTextBGCol"></a>
+    <strong>PLATE.Config.DermaTextBGCol</strong>
+    </dt>
+    <dd>
+    The text background color.
+
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "PLATE.Config.DermaTextBGColFocused"></a>
+    <strong>PLATE.Config.DermaTextBGColFocused</strong>
+    </dt>
+    <dd>
+    The text background color.
+
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+
+
+
+
+
+
+</dd>
+</dl>
+    <h2 class="section-header "><a name="General_Settings"></a>General Settings </h2>
+
+    <dl class="function">
+    <dt>
+    <a name = "PLATE.Config.DefaultFormat"></a>
+    <strong>PLATE.Config.DefaultFormat</strong>
+    </dt>
+    <dd>
+    The default format for the license plate.
+
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "PLATE.Config.CurrencySymbol"></a>
+    <strong>PLATE.Config.CurrencySymbol</strong>
+    </dt>
+    <dd>
+    The symbol to use for currency.
+
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "PLATE.Config.AllowChanges"></a>
+    <strong>PLATE.Config.AllowChanges</strong>
+    </dt>
+    <dd>
+    If custom plates are allowed.
+
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "PLATE.Config.AllowEmergencyChanges"></a>
+    <strong>PLATE.Config.AllowEmergencyChanges</strong>
+    </dt>
+    <dd>
+    If custom plates for emergency vehicles are allowed.
+
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "PLATE.Config.DisallowArrestChanges"></a>
+    <strong>PLATE.Config.DisallowArrestChanges</strong>
+    </dt>
+    <dd>
+    If a player has an arrest warrant, disallow them to change their plate.
+
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "PLATE.Config.NPCHeadText"></a>
+    <strong>PLATE.Config.NPCHeadText</strong>
+    </dt>
+    <dd>
+    If the plate seller NPC should have text above them.
+
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "PLATE.Config.Delay"></a>
+    <strong>PLATE.Config.Delay</strong>
+    </dt>
+    <dd>
+    Time in seconds between changes.
+
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "PLATE.Config.FadeDist"></a>
+    <strong>PLATE.Config.FadeDist</strong>
+    </dt>
+    <dd>
+    Distance in source units for which the license plates fade out.
+
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "PLATE.Config.MaxDist"></a>
+    <strong>PLATE.Config.MaxDist</strong>
+    </dt>
+    <dd>
+    Distance in source units for which you can change your plate.
+
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "PLATE.Config.Cost"></a>
+    <strong>PLATE.Config.Cost</strong>
+    </dt>
+    <dd>
+    Cost to change the license plate for a vehicle.
+
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "PLATE.Config.BindF3"></a>
+    <strong>PLATE.Config.BindF3</strong>
+    </dt>
+    <dd>
+    Bind F3 to open the menu if pressed whilst looking at a vehicle.
+
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "PLATE.Config.MaxLength"></a>
+    <strong>PLATE.Config.MaxLength</strong>
+    </dt>
+    <dd>
+    Maximum length of a license plate.  Up to 8 is supported by default.
+
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "PLATE.Config.DoDebugPrints"></a>
+    <strong>PLATE.Config.DoDebugPrints</strong>
+    </dt>
+    <dd>
+    Whether the system will do debug prints.
+
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+
+    <ul>
+        <li><span class="parameter">DoDebugPrints</span>
+            <span class="types"><span class="type">boolean</span></span>
+
+
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "PLATE.Config.LimitPlateChangesToGroup"></a>
+    <strong>PLATE.Config.LimitPlateChangesToGroup</strong>
+    </dt>
+    <dd>
+    Set to true if only certain groups are allowed to change their license plates.
+
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+
+    <ul>
+        <li><span class="parameter">LimitPlateChangesToGroup</span>
+            <span class="types"><span class="type">boolean</span></span>
+
+
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "PLATE.Config.PlateChangeGroups"></a>
+    <strong>PLATE.Config.PlateChangeGroups</strong>
+    </dt>
+    <dd>
+    The list of groups which are allowed to change their plates.
+
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+
+    <h3>Fields:</h3>
+    <ul>
+        <li><span class="parameter">PlateChangeGroups</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.5">table</a></span>
+
+
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+</dl>
+    <h2 class="section-header "><a name="Material_Configs"></a>Material Configs </h2>
+
+    <dl class="function">
+    <dt>
+    <a name = "PLATE.Config.Path"></a>
+    <strong>PLATE.Config.Path</strong>
+    </dt>
+    <dd>
+    Path to the plate textures.
+
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "PLATE.Config.Version"></a>
+    <strong>PLATE.Config.Version</strong>
+    </dt>
+    <dd>
+    Version of the plates to use.
+
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "PLATE.Config.DefaultPlate"></a>
+    <strong>PLATE.Config.DefaultPlate</strong>
+    </dt>
+    <dd>
+    The default license plate, if none other is selected.
+
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+
+
+
+
+
+
+</dd>
+</dl>
+    <h2 class="section-header "><a name="Plate_Configs"></a>Plate Configs </h2>
+
+    <dl class="function">
+    <dt>
+    <a name = "PLATE.Config.WidthScale"></a>
+    <strong>PLATE.Config.WidthScale</strong>
+    </dt>
+    <dd>
+    Width of plate at scale 1.
+
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "PLATE.Config.HeightScale"></a>
+    <strong>PLATE.Config.HeightScale</strong>
+    </dt>
+    <dd>
+    Height of plate at scale 1.
+
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "PLATE.Config.DefaultColour"></a>
+    <strong>PLATE.Config.DefaultColour</strong>
+    </dt>
+    <dd>
+    The default colour for plate text, if no other colour is defined.
+
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "PLATE.Config.PlateDarken"></a>
+    <strong>PLATE.Config.PlateDarken</strong>
+    </dt>
+    <dd>
+    Decimal to darken the plate by.  (0 &lt;=> 1)
+
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "PLATE.Config.HeaderText"></a>
+    <strong>PLATE.Config.HeaderText</strong>
+    </dt>
+    <dd>
+    The header text to display over the plate.
+
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "PLATE.Config.BlockedHide"></a>
+    <strong>PLATE.Config.BlockedHide</strong>
+    </dt>
+    <dd>
+    If plates should be hidden if behind a prop.
+
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+
+
+
+
+
+
+</dd>
+</dl>
+    <h2 class="section-header "><a name="Exempt_Plate_Settings"></a>Exempt Plate Settings </h2>
+
+    <dl class="function">
+    <dt>
+    <a name = "PLATE.Config.ParseVCEmergency"></a>
+    <strong>PLATE.Config.ParseVCEmergency</strong>
+    </dt>
+    <dd>
+    If we should parse VCMod Data to check emergency vehicles.
+
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "PLATE.Emergency"></a>
+    <strong>PLATE.Emergency</strong>
+    </dt>
+    <dd>
+    Vehicle Categories / vehicle IDs which are deemed "emergency" vehicles, and get exempt plates.
+
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "PLATE.EmergOverride"></a>
+    <strong>PLATE.EmergOverride</strong>
+    </dt>
+    <dd>
+    Vehicle Names which are in "emergency" categories, but shouldn't get plates.
+
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+
+
+
+
+
+
+</dd>
+</dl>
+    <h2 class="section-header "><a name="Colours_and_Dates"></a>Colours and Dates </h2>
+
+    <dl class="function">
+    <dt>
+    <a name = "PLATE.Colours"></a>
+    <strong>PLATE.Colours</strong>
+    </dt>
+    <dd>
+    List of plate paths and their colours.
+
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "PLATE.Months"></a>
+    <strong>PLATE.Months</strong>
+    </dt>
+    <dd>
+    List of Plates by Month / Day
+
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+
+
+
+
+
+
+</dd>
+</dl>
+
+
+</div> <!-- id="content" -->
+</div> <!-- id="main" -->
+<div id="about">
+<i>generated by <a href="http://github.com/stevedonovan/LDoc">LDoc 1.4.6</a></i>
+<i style="float:right;">Last updated 2020-12-14 12:46:10 </i>
+</div> <!-- id="about" -->
+</div> <!-- id="container" -->
+</body>
+</html>

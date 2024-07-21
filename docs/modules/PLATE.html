@@ -1,0 +1,1621 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<head>
+    <title>Reference</title>
+    <link rel="stylesheet" href="../ldoc.css" type="text/css" />
+    <link rel="stylesheet" href="../glua.css" type="text/css" />
+</head>
+<body>
+
+<div id="container">
+
+<div id="product">
+	<div id="product_logo"></div>
+	<div id="product_name"><big><b></b></big></div>
+	<div id="product_description"></div>
+</div> <!-- id="product" -->
+
+
+<div id="main">
+
+
+<!-- Menu -->
+
+<div id="navigation">
+<br/>
+<h1>L² Plates</h1>
+
+<ul>
+  <li><a href="../index.html">Index</a></li>
+</ul>
+
+<h2>Contents</h2>
+<ul>
+<li><a href="#Functions">Functions</a></li>
+<li><a href="#Tables">Tables</a></li>
+<li><a href="#Fields">Fields</a></li>
+</ul>
+
+
+<h2>Modules</h2>
+<ul class="nowrap">
+  <li><strong>PLATE</strong></li>
+  <li><a href="../modules/PLATE.Config.html">PLATE.Config</a></li>
+  <li><a href="../modules/ll_plates.conf_vehicles.html">ll_plates.conf_vehicles</a></li>
+  <li><a href="../modules/PLATE.Debugging.html">PLATE.Debugging</a></li>
+  <li><a href="../modules/PLATE.Language.html">PLATE.Language</a></li>
+  <li><a href="../modules/xAdmin.html">xAdmin</a></li>
+</ul>
+<h2>Classes</h2>
+<ul class="nowrap">
+  <li><a href="../classes/Plates_NPC.html">Plates_NPC</a></li>
+  <li><a href="../classes/lang.html">lang</a></li>
+  <li><a href="../classes/plural.html">plural</a></li>
+  <li><a href="../classes/rule.html">rule</a></li>
+</ul>
+<h2>Topics</h2>
+<ul class="">
+  <li><a href="../topics/backgrounds.md.html">backgrounds</a></li>
+  <li><a href="../topics/new-plates.md.html">new-plates</a></li>
+  <li><a href="../topics/seasonal-plates.md.html">seasonal-plates</a></li>
+</ul>
+
+</div>
+
+<div id="content">
+
+<h1>Module <code>PLATE</code></h1>
+<p>License Plates</p>
+<p>
+
+</p>
+    <h3>Info:</h3>
+    <ul>
+        <li><strong>Copyright</strong>: 2020 Limelight Gaming</li>
+        <li><strong>Release</strong>: 3.9.0</li>
+        <li><strong>Author</strong>: John Internet</li>
+    </ul>
+
+
+<h2><a href="#Functions">Functions</a></h2>
+<table class="function_list">
+	<tr>
+	<td class="name" nowrap><a href="#GetPlateColourFromPath"><span class='state state-client'>GetPlateColourFromPath(path)</span></a></td>
+	<td class="summary">Get the colour required for a specific plate by its path.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#GetBySeason"><span class='state state-client'>GetBySeason()</span></a></td>
+	<td class="summary">Get the plate based on the current month/day.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#DrawCar"><span class='state state-client'>DrawCar(ent, lPlyPos[, traceData])</span></a></td>
+	<td class="summary">Draw the plates on a single car.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#DrawPlate"><span class='state state-client'>DrawPlate(ent, plate, text[, title=""], mat, col[, traceData])</span></a></td>
+	<td class="summary">Draw a single plate on a given entity.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#OpenMenu"><span class='state state-client'>OpenMenu(leng, ply)</span></a></td>
+	<td class="summary">Open the F3 license plate menu.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#PostDrawTranslucentRenderables"><span class='state state-client'>PostDrawTranslucentRenderables(d, s)</span></a></td>
+	<td class="summary">Internal function, used for hooking into PostDrawTranslucentRenderables.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#IsValid"><span class='state state-client state-server'>IsValid()</span></a></td>
+	<td class="summary">Ensure we're valid.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#RegisterPlate"><span class='state state-client state-server'>RegisterPlate(veh, first, ...)</span></a></td>
+	<td class="summary">Register a plate for use by the vehicle defined by veh.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#RegisterLegacy"><span class='state state-client state-server'>RegisterLegacy(veh, ...)</span></a></td>
+	<td class="summary">Register a legacy plate position.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#GetPlate"><span class='state state-client state-server'>GetPlate(veh)</span></a></td>
+	<td class="summary">Get registered plates for a given vehicle.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#CheckVehicleOwnership"><span class='state state-client state-server'>CheckVehicleOwnership(ply, veh)</span></a></td>
+	<td class="summary">Check if a given vehicle is owned by the current player.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#GetModelMatches"><span class='state state-client state-server'>GetModelMatches()</span></a></td>
+	<td class="summary">Function called to load model matches.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#RandomLetter"><span class='state state-server'>RandomLetter()</span></a></td>
+	<td class="summary">Generate a random capital letter.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#RandomNumber"><span class='state state-server'>RandomNumber()</span></a></td>
+	<td class="summary">Generate a random number, in the range 0-9
+ Whilst it's not quicker, it's nicer to have it being a function in the plate table.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#DoReplace"><span class='state state-server'>DoReplace(val)</span></a></td>
+	<td class="summary">Format a string replacement for RandomPlate
+ Takes the string or digit string format pattern, returning a random letter or number.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#RandomPlate"><span class='state state-server'>RandomPlate()</span></a></td>
+	<td class="summary">Generates a random plate based on <a href="../modules/PLATE.Config.html#PLATE.Config.DefaultFormat">PLATE.Config.DefaultFormat</a>.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#GetVehicleName"><span class='state state-server'>GetVehicleName(ent)</span></a></td>
+	<td class="summary">Get the "name" of the vehicle.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#GenerateTable"><span class='state state-server'>GenerateTable()</span></a></td>
+	<td class="summary">Create the SQLite table, if it doesn't exist.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#GetChosenVehicle"><span class='state state-server'>GetChosenVehicle(ply, ent)</span></a></td>
+	<td class="summary">Get the player's chosen vehicle.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#OpenMenu"><span class='state state-server'>OpenMenu(ply, ent)</span></a></td>
+	<td class="summary">Open the plate menu on a client.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#OnShowSpare1"><span class='state state-server'>OnShowSpare1(ply)</span></a></td>
+	<td class="summary">Open the plate menu on the selected vehicle.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#PlayerHasCash"><span class='state state-server'>PlayerHasCash(ply, amt)</span></a></td>
+	<td class="summary">Check if the player has the amount of cash required to do a transaction.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#PlayerTakeMoney"><span class='state state-server'>PlayerTakeMoney(ply, amt)</span></a></td>
+	<td class="summary">Take cash from a player.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#SetLicensePlate"><span class='state state-server'>SetLicensePlate(ply, veh, plate)</span></a></td>
+	<td class="summary">Update the license plate in the DB and on the vehicle itself.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#SearchPlate"><span class='state state-server'>SearchPlate(plate)</span></a></td>
+	<td class="summary">Get the steamid of the player with matching plate.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#PlateFromSteamID"><span class='state state-server'>PlateFromSteamID(sid[, veh])</span></a></td>
+	<td class="summary">Fetch a table of all license plates, keyed by vehicle ID or
+ license plate for a specific steam ID / vehicle pair.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#GetLicensePlate"><span class='state state-server'>GetLicensePlate(ply, veh)</span></a></td>
+	<td class="summary">Fetch license plate information for a vehicle and generate if none exists.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#CanOpenLicenseMenu"><span class='state state-server'>CanOpenLicenseMenu(ply, veh)</span></a></td>
+	<td class="summary">Hook function, called to determine if a player can open the license plate menu.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#CanUpdateLicensePlate"><span class='state state-server'>CanUpdateLicensePlate(ply, veh, plate)</span></a></td>
+	<td class="summary">Hook function, called to determine if a player can update their license plate.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#GetUpdate"><span class='state state-server'>GetUpdate(leng, ply, plate, veh_type, veh)</span></a></td>
+	<td class="summary">Internal function, used to process the plate update net message.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#IsEmergency"><span class='state state-server'>IsEmergency(veh)</span></a></td>
+	<td class="summary">Check if a given vehicle is an emergency vehicle.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#PrepareVehicle"><span class='state state-server'>PrepareVehicle(ply, veh)</span></a></td>
+	<td class="summary">Setup a vehicle's license plates, upon spawn.</td>
+	</tr>
+</table>
+<h2><a href="#Tables">Tables</a></h2>
+<table class="function_list">
+	<tr>
+	<td class="name" nowrap><a href="#Config">Config</a></td>
+	<td class="summary">Table for storing all information about plates and their configuration.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Positions">Positions</a></td>
+	<td class="summary">The stored positions of the license plates.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#VehicleClasses">VehicleClasses</a></td>
+	<td class="summary">Table containing valid vehicle classes.</td>
+	</tr>
+</table>
+<h2><a href="#Fields">Fields</a></h2>
+<table class="function_list">
+	<tr>
+	<td class="name" nowrap><a href="#platePath">platePath</a></td>
+	<td class="summary">The path for the regular license plate material.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#plateMat">plateMat</a></td>
+	<td class="summary">The license plate material.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#plateCol">plateCol</a></td>
+	<td class="summary">The text colour for that license plate.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#exemptPath">exemptPath</a></td>
+	<td class="summary">Exempt plate path.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#exemptMat">exemptMat</a></td>
+	<td class="summary">Exempt plate material.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#exemptCol">exemptCol</a></td>
+	<td class="summary">Exempt plate text color.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#COLOUR_NONE">COLOUR_NONE</a></td>
+	<td class="summary">Base plate standard color.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#COLOUR_RESET">COLOUR_RESET</a></td>
+	<td class="summary">Base plate reset color.</td>
+	</tr>
+</table>
+
+<br/>
+<br/>
+
+
+    <h2 class="section-header "><a name="Functions"></a>Functions</h2>
+
+    <dl class="function">
+    <dt>
+    <a name = "GetPlateColourFromPath"></a>
+    <strong><span class='state state-client'>GetPlateColourFromPath(path)</span></strong>
+    </dt>
+    <dd>
+    Get the colour required for a specific plate by its path.
+
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">path</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
+         The path to grab colour for.
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><span class="type">Color</span></span>
+        The colour for the plate, or the default plate colour if none is defined.
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "GetBySeason"></a>
+    <strong><span class='state state-client'>GetBySeason()</span></strong>
+    </dt>
+    <dd>
+    Get the plate based on the current month/day.
+
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
+        Path to the plate, not including base path.
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "DrawCar"></a>
+    <strong><span class='state state-client'>DrawCar(ent, lPlyPos[, traceData])</span></strong>
+    </dt>
+    <dd>
+    Draw the plates on a single car.
+
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">ent</span>
+            <span class="types"><span class="type">Entity</span></span>
+         Entity to draw on.
+        </li>
+        <li><span class="parameter">lPlyPos</span>
+            <span class="types"><span class="type">Vector</span></span>
+         The player's position.
+        </li>
+        <li><span class="parameter">traceData</span>
+            <span class="types"><span class="type">tab</span></span>
+         The trace data to use as a base for trace based plate hiding.
+         (<em>optional</em>)
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "DrawPlate"></a>
+    <strong><span class='state state-client'>DrawPlate(ent, plate, text[, title=""], mat, col[, traceData])</span></strong>
+    </dt>
+    <dd>
+    Draw a single plate on a given entity.
+
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">ent</span>
+            <span class="types"><span class="type">Entity</span></span>
+         The entity to draw on.
+        </li>
+        <li><span class="parameter">plate</span>
+            <span class="types"><span class="type">tab</span></span>
+         Plate data.
+        </li>
+        <li><span class="parameter">text</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
+         The license plate text to draw.
+        </li>
+        <li><span class="parameter">title</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
+         Title to draw.
+         (<em>default</em> "")
+        </li>
+        <li><span class="parameter">mat</span>
+            <span class="types"><span class="type">Material</span></span>
+         Plate material to draw.
+        </li>
+        <li><span class="parameter">col</span>
+            <span class="types"><span class="type">Color</span></span>
+         Color to draw.
+        </li>
+        <li><span class="parameter">traceData</span>
+            <span class="types"><span class="type">tab</span></span>
+         Tracedata to use.
+         (<em>optional</em>)
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "OpenMenu"></a>
+    <strong><span class='state state-client'>OpenMenu(leng, ply)</span></strong>
+    </dt>
+    <dd>
+    Open the F3 license plate menu.
+
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">leng</span>
+            <span class="types"><span class="type">int</span></span>
+         int Net Message Length
+        </li>
+        <li><span class="parameter">ply</span>
+         Confirmation that the net message was sent from the server. (Should be nil)
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "PostDrawTranslucentRenderables"></a>
+    <strong><span class='state state-client'>PostDrawTranslucentRenderables(d, s)</span></strong>
+    </dt>
+    <dd>
+    Internal function, used for hooking into PostDrawTranslucentRenderables.
+ Yes, I know BadCoderz fires on this.
+ The only other way of doing this is setting a RenderOverride function.
+ That breaks refract materials, so I'm not doing that.
+ I know I'm doing ents.GetAll in here. I need to test against multiple classes. prop<em>vehicle</em>jeep, prop<em>vehicle</em>jeep<em>old,
+ prop</em>vehicle_airboat, whatever the fuck the ID is for SCars. That has a higher performance hit than ents.GetAll.
+
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">d</span>
+            <span class="types"><span class="type">bool</span></span>
+         If the hook is currently drawing depth.
+        </li>
+        <li><span class="parameter">s</span>
+            <span class="types"><span class="type">bool</span></span>
+         If the hook is currently drawing sky.
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "IsValid"></a>
+    <strong><span class='state state-client state-server'>IsValid()</span></strong>
+    </dt>
+    <dd>
+    Ensure we're valid.  (Used for the hook lib).
+
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    <h3>Internal:</h3>
+    <ul>
+         <span class='tag-internal'>This function is internal. Whilst you can call it, you probably shouldn't.</span>
+    </ul>
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "RegisterPlate"></a>
+    <strong><span class='state state-client state-server'>RegisterPlate(veh, first, ...)</span></strong>
+    </dt>
+    <dd>
+    Register a plate for use by the vehicle defined by veh.
+
+    </ul>
+    <h3>Warnings:</h3>
+    <ul>
+         <span class='tag-warning'>Must be ran in a shared context, otherwise plate positions will not show.</span>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">veh</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
+         Vehicle name to register.
+        </li>
+        <li><span class="parameter">first</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a> or <a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.5">table</a></span>
+         Vehicle name to copy or first license plate table.
+        </li>
+        <li><span class="parameter">...</span>
+            <span class="types"><span class="type">vararg</span></span>
+
+
+
+        </li>
+    </ul>
+
+
+
+
+    <h3>Usage:</h3>
+    <ul>
+        <pre class="example">PLATE:RegisterPlate(<span class="string">"test1"</span>, {
+	pos = Vector(<span class="number">1</span>, <span class="number">1</span>, <span class="number">1</span>),
+	ang = Angle(<span class="number">0</span>, <span class="number">0</span>, <span class="number">90</span>),
+	scale = <span class="number">1.01</span>,
+	condition = <span class="keyword">function</span>(ent)
+		<span class="keyword">return</span> {Vector(<span class="number">1</span>, <span class="number">1</span>, <span class="number">1</span>), Angle(<span class="number">0</span>, <span class="number">0</span>, <span class="number">90</span>), scale = <span class="number">1.01</span>}
+})
+PLATE:RegisterPlate(<span class="string">"test1copy"</span>, <span class="string">"test1"</span>)</pre>
+    </ul>
+
+</dd>
+    <dt>
+    <a name = "RegisterLegacy"></a>
+    <strong><span class='state state-client state-server'>RegisterLegacy(veh, ...)</span></strong>
+    </dt>
+    <dd>
+    Register a legacy plate position.
+ Functionally the same as <a href="../modules/PLATE.html#RegisterPlate">RegisterPlate</a>, but sets a few flags on the data.
+
+    </ul>
+    <h3>Warnings:</h3>
+    <ul>
+         <span class='tag-warning'>Must be ran in a shared context, otherwise plate positions will not show.</span>
+    </ul>
+    </ul>
+    </ul>
+    <h3>Internal:</h3>
+    <ul>
+         <span class='tag-internal'>This function is internal. Whilst you can call it, you probably shouldn't.</span>
+    </ul>
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">veh</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
+         Vehicle name.
+        </li>
+        <li><span class="parameter">...</span>
+            <span class="types"><span class="type">vararg</span></span>
+
+
+
+        </li>
+    </ul>
+
+
+
+    <h3>See also:</h3>
+    <ul>
+         <a href="../modules/PLATE.html#RegisterPlate">PLATE.RegisterPlate</a>
+    </ul>
+
+
+</dd>
+    <dt>
+    <a name = "GetPlate"></a>
+    <strong><span class='state state-client state-server'>GetPlate(veh)</span></strong>
+    </dt>
+    <dd>
+    Get registered plates for a given vehicle.
+
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">veh</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
+         Vehicle name to get plates for
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.5">table</a></span>
+        Table of license plate positions, angles, scales and overrides.
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "CheckVehicleOwnership"></a>
+    <strong><span class='state state-client state-server'>CheckVehicleOwnership(ply, veh)</span></strong>
+    </dt>
+    <dd>
+    Check if a given vehicle is owned by the current player.
+
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">ply</span>
+            <span class="types"><span class="type">Player</span></span>
+         The player to check ownership from.
+        </li>
+        <li><span class="parameter">veh</span>
+            <span class="types"><span class="type">Vehicle</span></span>
+         The entity to check ownership of.
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><span class="type">bool</span></span>
+        Is the vehicle owned by the player.
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "GetModelMatches"></a>
+    <strong><span class='state state-client state-server'>GetModelMatches()</span></strong>
+    </dt>
+    <dd>
+    Function called to load model matches.
+
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    <h3>Internal:</h3>
+    <ul>
+         <span class='tag-internal'>This function is internal. Whilst you can call it, you probably shouldn't.</span>
+    </ul>
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "RandomLetter"></a>
+    <strong><span class='state state-server'>RandomLetter()</span></strong>
+    </dt>
+    <dd>
+    Generate a random capital letter.
+
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
+        Random uppercase letter.
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "RandomNumber"></a>
+    <strong><span class='state state-server'>RandomNumber()</span></strong>
+    </dt>
+    <dd>
+    Generate a random number, in the range 0-9
+ Whilst it's not quicker, it's nicer to have it being a function in the plate table.
+
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><span class="type">int</span></span>
+        Random number, range 0-9.
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "DoReplace"></a>
+    <strong><span class='state state-server'>DoReplace(val)</span></strong>
+    </dt>
+    <dd>
+    Format a string replacement for RandomPlate
+ Takes the string or digit string format pattern, returning a random letter or number.
+
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    <h3>Internal:</h3>
+    <ul>
+         <span class='tag-internal'>This function is internal. Whilst you can call it, you probably shouldn't.</span>
+    </ul>
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">val</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
+          Input value for testing.
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><span class="type">str</span></span>
+        Random letter, number or empty string.
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "RandomPlate"></a>
+    <strong><span class='state state-server'>RandomPlate()</span></strong>
+    </dt>
+    <dd>
+    Generates a random plate based on <a href="../modules/PLATE.Config.html#PLATE.Config.DefaultFormat">PLATE.Config.DefaultFormat</a>.
+
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
+        Randomly generated plate. 333,135,504 plates using default format.
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "GetVehicleName"></a>
+    <strong><span class='state state-server'>GetVehicleName(ent)</span></strong>
+    </dt>
+    <dd>
+    Get the "name" of the vehicle.
+
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">ent</span>
+            <span class="types"><span class="type">Entity</span></span>
+         The entity to get the name for.
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types">optional <a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
+        Returns nil on failure, vehicle name as string on success.
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "GenerateTable"></a>
+    <strong><span class='state state-server'>GenerateTable()</span></strong>
+    </dt>
+    <dd>
+    Create the SQLite table, if it doesn't exist.
+
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    <h3>Internal:</h3>
+    <ul>
+         <span class='tag-internal'>This function is internal. Whilst you can call it, you probably shouldn't.</span>
+    </ul>
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "GetChosenVehicle"></a>
+    <strong><span class='state state-server'>GetChosenVehicle(ply, ent)</span></strong>
+    </dt>
+    <dd>
+    Get the player's chosen vehicle.
+
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">ply</span>
+            <span class="types"><span class="type">Player</span></span>
+         Player to get the vehicle from.
+        </li>
+        <li><span class="parameter">ent</span>
+            <span class="types"><span class="type">boolean</span> or <span class="type">Entity</span></span>
+         If false, get closest owned vehicle. If true, get eye trace vehicle. If ent, use specific ent.
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+        <li>
+           <span class="types">optional <span class="type">Vehicle</span></span>
+        Chosen vehicle.</li>
+        <li>
+           <span class="types"><span class="type">integer</span></span>
+        Squared Distance to chosen vehicle, or 0 if chosen vehicle isn't valid.</li>
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "OpenMenu"></a>
+    <strong><span class='state state-server'>OpenMenu(ply, ent)</span></strong>
+    </dt>
+    <dd>
+    Open the plate menu on a client.
+
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">ply</span>
+            <span class="types"><span class="type">Player</span></span>
+         Player to open the menu on.
+        </li>
+        <li><span class="parameter">ent</span>
+            <span class="types"><span class="type">boolean</span> or <span class="type">Entity</span></span>
+         If false, get closest owned vehicle. If true, get eye trace vehicle. If ent, use specific ent.
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types">optional <span class="type">boolean</span></span>
+        True if the net message sends, nil otherwise.
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "OnShowSpare1"></a>
+    <strong><span class='state state-server'>OnShowSpare1(ply)</span></strong>
+    </dt>
+    <dd>
+    Open the plate menu on the selected vehicle.
+
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">ply</span>
+            <span class="types"><span class="type">Player</span></span>
+         The player who called ShowSpare1.
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "PlayerHasCash"></a>
+    <strong><span class='state state-server'>PlayerHasCash(ply, amt)</span></strong>
+    </dt>
+    <dd>
+    Check if the player has the amount of cash required to do a transaction.
+
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">ply</span>
+            <span class="types"><span class="type">Player</span></span>
+         The player to check cash on.
+        </li>
+        <li><span class="parameter">amt</span>
+            <span class="types"><span class="type">int</span></span>
+         The minimum cash the player must have.
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><span class="type">bool</span></span>
+        If the player can afford the transaction.
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "PlayerTakeMoney"></a>
+    <strong><span class='state state-server'>PlayerTakeMoney(ply, amt)</span></strong>
+    </dt>
+    <dd>
+    Take cash from a player.
+
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">ply</span>
+            <span class="types"><span class="type">Player</span></span>
+         Player to take money from.
+        </li>
+        <li><span class="parameter">amt</span>
+            <span class="types"><span class="type">int</span></span>
+         The amount of money to take.
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "SetLicensePlate"></a>
+    <strong><span class='state state-server'>SetLicensePlate(ply, veh, plate)</span></strong>
+    </dt>
+    <dd>
+    Update the license plate in the DB and on the vehicle itself.
+
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">ply</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a> or <span class="type">Player</span></span>
+         Player who's requesting the change, or their SteamID.
+        </li>
+        <li><span class="parameter">veh</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a> or <span class="type">Vehicle</span></span>
+         The vehicle entity the change is being requested for, or the vehicle name if setting without an entity.
+        </li>
+        <li><span class="parameter">plate</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
+         The plate that's having the change requested.
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><span class="type">boolean</span></span>
+        Success?
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "SearchPlate"></a>
+    <strong><span class='state state-server'>SearchPlate(plate)</span></strong>
+    </dt>
+    <dd>
+    Get the steamid of the player with matching plate.
+
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">plate</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
+         License plate to find.
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types">optional <a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
+        SteamID if found.
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "PlateFromSteamID"></a>
+    <strong><span class='state state-server'>PlateFromSteamID(sid[, veh])</span></strong>
+    </dt>
+    <dd>
+    Fetch a table of all license plates, keyed by vehicle ID or
+ license plate for a specific steam ID / vehicle pair.
+
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">sid</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
+         SteamID to query.
+        </li>
+        <li><span class="parameter">veh</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
+         Vehicle ID
+         (<em>optional</em>)
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.5">table</a>, <a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a> or <span class="type">nil</span></span>
+        Table of plates if veh isn't specified. Plate or nil if veh is specified.
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "GetLicensePlate"></a>
+    <strong><span class='state state-server'>GetLicensePlate(ply, veh)</span></strong>
+    </dt>
+    <dd>
+    Fetch license plate information for a vehicle and generate if none exists.
+
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">ply</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a> or <span class="type">Player</span></span>
+         Player or SteamID to get information for.
+        </li>
+        <li><span class="parameter">veh</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a> or <span class="type">Vehicle</span></span>
+         Vehicle (name) to get information for.
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
+        License plate.
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "CanOpenLicenseMenu"></a>
+    <strong><span class='state state-server'>CanOpenLicenseMenu(ply, veh)</span></strong>
+    </dt>
+    <dd>
+    Hook function, called to determine if a player can open the license plate menu.
+
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">ply</span>
+            <span class="types"><span class="type">Player</span></span>
+         The player updating their plate.
+        </li>
+        <li><span class="parameter">veh</span>
+            <span class="types"><span class="type">Vehicle</span></span>
+         The vehicle being updated.
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><span class="type">boolean</span></span>
+        If the change is allowed.
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "CanUpdateLicensePlate"></a>
+    <strong><span class='state state-server'>CanUpdateLicensePlate(ply, veh, plate)</span></strong>
+    </dt>
+    <dd>
+    Hook function, called to determine if a player can update their license plate.
+
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">ply</span>
+            <span class="types"><span class="type">Player</span></span>
+         The player updating their plate.
+        </li>
+        <li><span class="parameter">veh</span>
+            <span class="types"><span class="type">Vehicle</span></span>
+         The vehicle being updated.
+        </li>
+        <li><span class="parameter">plate</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
+         The new license plate.
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><span class="type">boolean</span></span>
+        If the change is allowed.
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "GetUpdate"></a>
+    <strong><span class='state state-server'>GetUpdate(leng, ply, plate, veh_type, veh)</span></strong>
+    </dt>
+    <dd>
+    Internal function, used to process the plate update net message.
+
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">leng</span>
+            <span class="types"><span class="type">int</span></span>
+         Length of incoming net message.
+        </li>
+        <li><span class="parameter">ply</span>
+            <span class="types"><span class="type">Player</span></span>
+         The player sending the message.
+        </li>
+        <li><span class="parameter">plate</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
+         The new plate.
+        </li>
+        <li><span class="parameter">veh_type</span>
+            <span class="types"><span class="type">int</span></span>
+         The vehicle picker type.
+        </li>
+        <li><span class="parameter">veh</span>
+            <span class="types"><span class="type">Vehicle</span></span>
+         The vehicle entity.
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "IsEmergency"></a>
+    <strong><span class='state state-server'>IsEmergency(veh)</span></strong>
+    </dt>
+    <dd>
+    Check if a given vehicle is an emergency vehicle.
+
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">veh</span>
+            <span class="types"><span class="type">Vehicle</span></span>
+         Vehicle to check.
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><span class="type">boolean</span></span>
+        If the vehicle is an emergency vehicle.
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "PrepareVehicle"></a>
+    <strong><span class='state state-server'>PrepareVehicle(ply, veh)</span></strong>
+    </dt>
+    <dd>
+    Setup a vehicle's license plates, upon spawn.
+ If, for whatever reason, you need to call this on a non-registered-vehicle?
+ Dev or something idk. SCars maybe? Should work.
+
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">ply</span>
+            <span class="types"><span class="type">Player</span></span>
+         The player that spawned the vehicle.
+        </li>
+        <li><span class="parameter">veh</span>
+            <span class="types"><span class="type">Vehicle</span></span>
+         The vehicle spawned.
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+</dl>
+    <h2 class="section-header "><a name="Tables"></a>Tables</h2>
+
+    <dl class="function">
+    <dt>
+    <a name = "Config"></a>
+    <strong>Config</strong>
+    </dt>
+    <dd>
+    Table for storing all information about plates and their configuration.
+
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "Positions"></a>
+    <strong>Positions</strong>
+    </dt>
+    <dd>
+    The stored positions of the license plates.
+
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "VehicleClasses"></a>
+    <strong>VehicleClasses</strong>
+    </dt>
+    <dd>
+    Table containing valid vehicle classes.
+ Done as [str | class] = [bool | valid].
+ Reduces O(N) lookup to O(1)
+
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+
+    <h3>Fields:</h3>
+    <ul>
+        <li><span class="parameter">[prop_vehicle_jeep]</span>
+
+
+
+        </li>
+        <li><span class="parameter">[prop_vehicle_jeep_old]</span>
+
+
+
+        </li>
+        <li><span class="parameter">[prop_vehicle_prisoner_pod]</span>
+
+
+
+        </li>
+        <li><span class="parameter">[prop_vehicle_airboat]</span>
+
+
+
+        </li>
+        <li><span class="parameter">[gmod_sent_vehicle_fphysics_base]</span>
+
+
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+</dl>
+    <h2 class="section-header "><a name="Fields"></a>Fields</h2>
+
+    <dl class="function">
+    <dt>
+    <a name = "platePath"></a>
+    <strong>platePath</strong>
+    </dt>
+    <dd>
+    The path for the regular license plate material.
+ These won't often change, so are cached.
+
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "plateMat"></a>
+    <strong>plateMat</strong>
+    </dt>
+    <dd>
+    The license plate material.
+
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "plateCol"></a>
+    <strong>plateCol</strong>
+    </dt>
+    <dd>
+    The text colour for that license plate.
+
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "exemptPath"></a>
+    <strong>exemptPath</strong>
+    </dt>
+    <dd>
+    Exempt plate path.
+
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+
+
+
+
+    <h3>See also:</h3>
+    <ul>
+         <a href="../modules/PLATE.html#platePath">PLATE.platePath</a>
+    </ul>
+
+
+</dd>
+    <dt>
+    <a name = "exemptMat"></a>
+    <strong>exemptMat</strong>
+    </dt>
+    <dd>
+    Exempt plate material.
+
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+
+
+
+
+    <h3>See also:</h3>
+    <ul>
+         <a href="../modules/PLATE.html#plateMat">PLATE.plateMat</a>
+    </ul>
+
+
+</dd>
+    <dt>
+    <a name = "exemptCol"></a>
+    <strong>exemptCol</strong>
+    </dt>
+    <dd>
+    Exempt plate text color.
+
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+
+
+
+
+    <h3>See also:</h3>
+    <ul>
+         <a href="../modules/PLATE.html#plateCol">PLATE.plateCol</a>
+    </ul>
+
+
+</dd>
+    <dt>
+    <a name = "COLOUR_NONE"></a>
+    <strong>COLOUR_NONE</strong>
+    </dt>
+    <dd>
+    Base plate standard color.
+ White but darkened by ${PLATE.Config.PlateDarken}
+
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "COLOUR_RESET"></a>
+    <strong>COLOUR_RESET</strong>
+    </dt>
+    <dd>
+    Base plate reset color.
+ Pure white.
+
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+
+
+
+
+
+
+</dd>
+</dl>
+
+
+</div> <!-- id="content" -->
+</div> <!-- id="main" -->
+<div id="about">
+<i>generated by <a href="http://github.com/stevedonovan/LDoc">LDoc 1.4.6</a></i>
+<i style="float:right;">Last updated 2020-12-14 12:46:10 </i>
+</div> <!-- id="about" -->
+</div> <!-- id="container" -->
+</body>
+</html>

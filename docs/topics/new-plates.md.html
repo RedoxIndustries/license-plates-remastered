@@ -1,0 +1,164 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<head>
+    <title>Reference</title>
+    <link rel="stylesheet" href="../ldoc.css" type="text/css" />
+    <link rel="stylesheet" href="../glua.css" type="text/css" />
+</head>
+<body>
+
+<div id="container">
+
+<div id="product">
+	<div id="product_logo"></div>
+	<div id="product_name"><big><b></b></big></div>
+	<div id="product_description"></div>
+</div> <!-- id="product" -->
+
+
+<div id="main">
+
+
+<!-- Menu -->
+
+<div id="navigation">
+<br/>
+<h1>L² Plates</h1>
+
+<ul>
+  <li><a href="../index.html">Index</a></li>
+</ul>
+
+<h2>Contents</h2>
+<ul>
+<li><a href="#Template">Template </a></li>
+<li><a href="#Getting_the_Vehicle_Name">Getting the Vehicle Name </a></li>
+<li><a href="#Load_into_conf_vehicles_lua">Load into conf_vehicles.lua </a></li>
+<li><a href="#Save___Upload___Reload">Save / Upload / Reload </a></li>
+<li><a href="#Get_the_Plate_Position">Get the Plate Position </a></li>
+<li><a href="#Adjust_Angles">Adjust Angles </a></li>
+<li><a href="#Other_Plates">Other Plates </a></li>
+<li><a href="#Complete_Example">Complete Example </a></li>
+</ul>
+
+
+<h2>Topics</h2>
+<ul class="">
+  <li><a href="../topics/backgrounds.md.html">backgrounds</a></li>
+  <li><strong>new-plates</strong></li>
+  <li><a href="../topics/seasonal-plates.md.html">seasonal-plates</a></li>
+</ul>
+<h2>Modules</h2>
+<ul class="nowrap">
+  <li><a href="../modules/PLATE.html">PLATE</a></li>
+  <li><a href="../modules/PLATE.Config.html">PLATE.Config</a></li>
+  <li><a href="../modules/ll_plates.conf_vehicles.html">ll_plates.conf_vehicles</a></li>
+  <li><a href="../modules/PLATE.Debugging.html">PLATE.Debugging</a></li>
+  <li><a href="../modules/PLATE.Language.html">PLATE.Language</a></li>
+  <li><a href="../modules/xAdmin.html">xAdmin</a></li>
+</ul>
+<h2>Classes</h2>
+<ul class="nowrap">
+  <li><a href="../classes/Plates_NPC.html">Plates_NPC</a></li>
+  <li><a href="../classes/lang.html">lang</a></li>
+  <li><a href="../classes/plural.html">plural</a></li>
+  <li><a href="../classes/rule.html">rule</a></li>
+</ul>
+
+</div>
+
+<div id="content">
+
+
+<h1>Positioning New Plates</h1>
+
+<p>Positioning new plates is really easy, even if you don't have the dev tool. Firstly, you need the <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=195065185">Easy Entity Inspector</a></p>
+
+<p><a name="Template"></a></p>
+<h2>Template</h2>
+<p>You're gonna need the template, which you can grab from here.</p>
+
+<pre>
+PLATE:RegisterPlate(<span class="string">"VEHICLE"</span>, {
+    pos = Vector(<span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>),
+    ang = angForward,
+    scale = <span class="number">1</span>,
+}, {
+    pos = Vector(<span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>),
+    ang = angBackward,
+    scale = <span class="number">1</span>,
+})
+</pre>
+
+
+<p><a name="Getting_the_Vehicle_Name"></a></p>
+<h2>Getting the Vehicle Name</h2>
+<p>Hop over to the Q menu, and grab down the vehicle you want to setup.
+Right click on the vehicle, click "copy to clipboard". Replace "VEHICLE" which whatever you copied.</p>
+
+<p><a name="Load_into_conf_vehicles_lua"></a></p>
+<h2>Load into conf_vehicles.lua</h2>
+<p>At the end of the conf_vehicles file, put your replaced template.</p>
+
+<pre>
+PLATE:RegisterPlate(<span class="string">"chev_cucv_lw"</span>, {
+    pos = Vector(<span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>),
+    ang = angForward,
+    scale = <span class="number">1</span>
+}, {
+    pos = Vector(<span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>),
+    ang = angBackward,
+    scale = <span class="number">1</span>
+})
+</pre>
+
+
+<p><a name="Save___Upload___Reload"></a></p>
+<h2>Save / Upload / Reload</h2>
+<p>If you're on a server, you probably need to reload the map. In single-player, you can just save.</p>
+
+<p><a name="Get_the_Plate_Position_"></a></p>
+<h2>Get the Plate Position.</h2>
+<p>Grab out your Easy Entity Inspector, click on the vehicle where you want your license plate. Find the second vector (HitPos), copy that to your clipboard and shove it in your first pos. Save / Upload again.</p>
+
+<p><a name="Adjust_Angles"></a></p>
+<h2>Adjust Angles</h2>
+<p>If the angles are wrong, it's normally best to add another angle to it, and adjust that.</p>
+
+<pre>
+ang = angForward + Angle(<span class="number">0</span>, <span class="number">0</span>, <span class="number">5</span>)
+</pre>
+
+
+<p><a name="Other_Plates"></a></p>
+<h2>Other Plates</h2>
+<p>Then, repeat this for each plate you want, or remove plates you don't want.</p>
+
+<p><a name="Complete_Example"></a></p>
+<h2>Complete Example</h2>
+
+<pre>
+PLATE:RegisterPlate(<span class="string">"chev_cucv_lw"</span>, {
+    pos = Vector(<span class="number">0</span>, <span class="number">106.3</span>, <span class="number">37.2</span>),
+    ang = angForward + Angle(<span class="number">0</span>, <span class="number">0</span>, <span class="number">15</span>),
+    scale = <span class="number">1</span>
+}, {
+    pos = Vector( <span class="number">0</span>, -<span class="number">139.5</span>, <span class="number">31.5</span>),
+    ang = angBackward,
+    scale = <span class="number">1</span>
+})
+</pre>
+
+
+
+</div> <!-- id="content" -->
+</div> <!-- id="main" -->
+<div id="about">
+<i>generated by <a href="http://github.com/stevedonovan/LDoc">LDoc 1.4.6</a></i>
+<i style="float:right;">Last updated 2020-12-14 12:46:10 </i>
+</div> <!-- id="about" -->
+</div> <!-- id="container" -->
+</body>
+</html>

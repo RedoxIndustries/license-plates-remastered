@@ -1,0 +1,36 @@
+.state::before {
+	border-radius: 4px;
+	height: 1.2em;
+	width: 1.2em;
+	margin-right: 4px;
+	content: " ";
+	display: inline-block;
+	vertical-align: text-top;
+}
+
+.state-server::before {
+	background: #3498db;
+}
+
+.state-client::before {
+	background: #d35400;
+}
+
+.state-menu::before {
+	background: #27ae60;
+}
+
+.state-client.state-server::before {
+	background: #bf22e6;
+	background-image: linear-gradient(to bottom left, #3498db 0%, #3498db 50%, #d35400 50%)
+}
+
+.state-client.state-server.state-menu::before {
+	background: #658969;
+	background-image: linear-gradient(to bottom left, #3498db 0%, #3498db 33%, #d35400 33%, #d35400 66%, #27ae60 66%)
+}
+
+.state-client.state-menu::before {
+	background: #7D8130;
+	background-image: linear-gradient(to bottom left, #27ae60 0%, #27ae60 50%, #d35400 50%)
+}

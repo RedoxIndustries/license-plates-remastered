@@ -1,0 +1,505 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<head>
+    <title>Reference</title>
+    <link rel="stylesheet" href="../ldoc.css" type="text/css" />
+    <link rel="stylesheet" href="../glua.css" type="text/css" />
+</head>
+<body>
+
+<div id="container">
+
+<div id="product">
+	<div id="product_logo"></div>
+	<div id="product_name"><big><b></b></big></div>
+	<div id="product_description"></div>
+</div> <!-- id="product" -->
+
+
+<div id="main">
+
+
+<!-- Menu -->
+
+<div id="navigation">
+<br/>
+<h1>L² Plates</h1>
+
+<ul>
+  <li><a href="../index.html">Index</a></li>
+</ul>
+
+<h2>Contents</h2>
+<ul>
+<li><a href="#Functions">Functions</a></li>
+<li><a href="#Fields">Fields</a></li>
+<li><a href="#Methods">Methods</a></li>
+</ul>
+
+
+<h2>Classes</h2>
+<ul class="nowrap">
+  <li><strong>Plates_NPC</strong></li>
+  <li><a href="../classes/lang.html">lang</a></li>
+  <li><a href="../classes/plural.html">plural</a></li>
+  <li><a href="../classes/rule.html">rule</a></li>
+</ul>
+<h2>Modules</h2>
+<ul class="nowrap">
+  <li><a href="../modules/PLATE.html">PLATE</a></li>
+  <li><a href="../modules/PLATE.Config.html">PLATE.Config</a></li>
+  <li><a href="../modules/ll_plates.conf_vehicles.html">ll_plates.conf_vehicles</a></li>
+  <li><a href="../modules/PLATE.Debugging.html">PLATE.Debugging</a></li>
+  <li><a href="../modules/PLATE.Language.html">PLATE.Language</a></li>
+  <li><a href="../modules/xAdmin.html">xAdmin</a></li>
+</ul>
+<h2>Topics</h2>
+<ul class="">
+  <li><a href="../topics/backgrounds.md.html">backgrounds</a></li>
+  <li><a href="../topics/new-plates.md.html">new-plates</a></li>
+  <li><a href="../topics/seasonal-plates.md.html">seasonal-plates</a></li>
+</ul>
+
+</div>
+
+<div id="content">
+
+<h1>Class <code>Plates_NPC</code></h1>
+<p>License Seller NPC</p>
+<p>
+
+</p>
+    <h3>Info:</h3>
+    <ul>
+        <li><strong>Copyright</strong>: 2020 Limelight Gaming</li>
+        <li><strong>Release</strong>: development</li>
+        <li><strong>Author</strong>: John Internet</li>
+    </ul>
+
+
+<h2><a href="#Functions">Functions</a></h2>
+<table class="function_list">
+	<tr>
+	<td class="name" nowrap><a href="#LL_PLATES_SYSTEM:OpenNPCMenu"><span class='state state-client'>LL_PLATES_SYSTEM:OpenNPCMenu(leng, ply, veh)</span></a></td>
+	<td class="summary">Open the NPC plate menu.</td>
+	</tr>
+</table>
+<h2><a href="#Fields">Fields</a></h2>
+<table class="function_list">
+	<tr>
+	<td class="name" nowrap><a href="#Plates_NPC.Base">Plates_NPC.Base</a></td>
+	<td class="summary">The entity base used.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Plates_NPC.Type">Plates_NPC.Type</a></td>
+	<td class="summary">The type of entity.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Plates_NPC.AutomaticFrameAdvance">Plates_NPC.AutomaticFrameAdvance</a></td>
+	<td class="summary">If frames are automatically advanced.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Plates_NPC.PrintName">Plates_NPC.PrintName</a></td>
+	<td class="summary">Client spawn name.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Plates_NPC.Author">Plates_NPC.Author</a></td>
+	<td class="summary">Author's name.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Plates_NPC.Contact">Plates_NPC.Contact</a></td>
+	<td class="summary">Author's contact.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Plates_NPC.Purpose">Plates_NPC.Purpose</a></td>
+	<td class="summary">Fluff text</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Plates_NPC.Instructions">Plates_NPC.Instructions</a></td>
+	<td class="summary">Fluff text</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Plates_NPC.AdminSpawnable">Plates_NPC.AdminSpawnable</a></td>
+	<td class="summary">If the ent can be spawned by admins.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Plates_NPC.Spawnable">Plates_NPC.Spawnable</a></td>
+	<td class="summary">If the ent can be spawned.</td>
+	</tr>
+</table>
+<h2><a href="#Methods">Methods</a></h2>
+<table class="function_list">
+	<tr>
+	<td class="name" nowrap><a href="#Plates_NPC:Initialize"><span class='state state-server'>Plates_NPC:Initialize()</span></a></td>
+	<td class="summary">Prepare the entity for use.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Plates_NPC:OnTakeDamage"><span class='state state-server'>Plates_NPC:OnTakeDamage()</span></a></td>
+	<td class="summary">Hook function called when damage is sent.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Plates_NPC:AcceptInput"><span class='state state-server'>Plates_NPC:AcceptInput(n, a, c)</span></a></td>
+	<td class="summary">Called when an input is sent.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Plates_NPC:SetAutomaticFrameAdvance"><span class='state state-client state-server'>Plates_NPC:SetAutomaticFrameAdvance(bUsingAnim)</span></a></td>
+	<td class="summary">Setter for AutomaticFrameAdvance</td>
+	</tr>
+</table>
+
+<br/>
+<br/>
+
+
+    <h2 class="section-header "><a name="Functions"></a>Functions</h2>
+
+    <dl class="function">
+    <dt>
+    <a name = "LL_PLATES_SYSTEM:OpenNPCMenu"></a>
+    <strong><span class='state state-client'>LL_PLATES_SYSTEM:OpenNPCMenu(leng, ply, veh)</span></strong>
+    </dt>
+    <dd>
+    Open the NPC plate menu.
+
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">leng</span>
+            <span class="types"><span class="type">int</span></span>
+         Net Message Length
+        </li>
+        <li><span class="parameter">ply</span>
+         Confirmation that the net message was sent from the server (should be nil)
+        </li>
+        <li><span class="parameter">veh</span>
+            <span class="types"><span class="type">Entity</span></span>
+         Closest player owned vehicle.
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+</dl>
+    <h2 class="section-header "><a name="Fields"></a>Fields</h2>
+
+    <dl class="function">
+    <dt>
+    <a name = "Plates_NPC.Base"></a>
+    <strong>Plates_NPC.Base</strong>
+    </dt>
+    <dd>
+    The entity base used.
+
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "Plates_NPC.Type"></a>
+    <strong>Plates_NPC.Type</strong>
+    </dt>
+    <dd>
+    The type of entity.
+
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "Plates_NPC.AutomaticFrameAdvance"></a>
+    <strong>Plates_NPC.AutomaticFrameAdvance</strong>
+    </dt>
+    <dd>
+    If frames are automatically advanced.
+
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "Plates_NPC.PrintName"></a>
+    <strong>Plates_NPC.PrintName</strong>
+    </dt>
+    <dd>
+    Client spawn name.
+
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "Plates_NPC.Author"></a>
+    <strong>Plates_NPC.Author</strong>
+    </dt>
+    <dd>
+    Author's name.
+
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "Plates_NPC.Contact"></a>
+    <strong>Plates_NPC.Contact</strong>
+    </dt>
+    <dd>
+    Author's contact.
+
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "Plates_NPC.Purpose"></a>
+    <strong>Plates_NPC.Purpose</strong>
+    </dt>
+    <dd>
+    Fluff text
+
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "Plates_NPC.Instructions"></a>
+    <strong>Plates_NPC.Instructions</strong>
+    </dt>
+    <dd>
+    Fluff text
+
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "Plates_NPC.AdminSpawnable"></a>
+    <strong>Plates_NPC.AdminSpawnable</strong>
+    </dt>
+    <dd>
+    If the ent can be spawned by admins.
+
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "Plates_NPC.Spawnable"></a>
+    <strong>Plates_NPC.Spawnable</strong>
+    </dt>
+    <dd>
+    If the ent can be spawned.
+
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+
+
+
+
+
+
+</dd>
+</dl>
+    <h2 class="section-header "><a name="Methods"></a>Methods</h2>
+
+    <dl class="function">
+    <dt>
+    <a name = "Plates_NPC:Initialize"></a>
+    <strong><span class='state state-server'>Plates_NPC:Initialize()</span></strong>
+    </dt>
+    <dd>
+    Prepare the entity for use.
+
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "Plates_NPC:OnTakeDamage"></a>
+    <strong><span class='state state-server'>Plates_NPC:OnTakeDamage()</span></strong>
+    </dt>
+    <dd>
+    Hook function called when damage is sent.
+
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><span class="type">boolean</span></span>
+        If the entity should take damage.
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "Plates_NPC:AcceptInput"></a>
+    <strong><span class='state state-server'>Plates_NPC:AcceptInput(n, a, c)</span></strong>
+    </dt>
+    <dd>
+    Called when an input is sent.
+
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">n</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
+         The name of the sent input.
+        </li>
+        <li><span class="parameter">a</span>
+            <span class="types"><span class="type">Entity</span></span>
+         Direct activator.
+        </li>
+        <li><span class="parameter">c</span>
+            <span class="types"><span class="type">Entity</span></span>
+         Primary caller.
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "Plates_NPC:SetAutomaticFrameAdvance"></a>
+    <strong><span class='state state-client state-server'>Plates_NPC:SetAutomaticFrameAdvance(bUsingAnim)</span></strong>
+    </dt>
+    <dd>
+    Setter for AutomaticFrameAdvance
+
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+    </ul>
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">bUsingAnim</span>
+            <span class="types"><span class="type">bool</span></span>
+         If the entity is uses animations.
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+</dl>
+
+
+</div> <!-- id="content" -->
+</div> <!-- id="main" -->
+<div id="about">
+<i>generated by <a href="http://github.com/stevedonovan/LDoc">LDoc 1.4.6</a></i>
+<i style="float:right;">Last updated 2020-12-14 12:46:10 </i>
+</div> <!-- id="about" -->
+</div> <!-- id="container" -->
+</body>
+</html>

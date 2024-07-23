@@ -30,9 +30,9 @@ PLATE:RegisterPlate("dannio_2018_citroen_c5_aircross", -- Citroen C5 Aircross '1
 {pos = Vector(0, 109, 30.5), ang = Angle(0, 180, 90), plaquetype = "avant", bg = {id = false, val = {}}},
 {pos = Vector(0, -104, 45), ang = Angle(0, 0, 76.5), plaquetype = "arriere", bg = {id = false, val = {}}})
 
-PLATE:RegisterPlate("citroen_c5_aircross_103075219", -- Citroen C5 Aircross '18
-{pos = Vector(0, 109, 30.5), ang = Angle(0, 180, 90), plaquetype = "bspp-cmo", bg = {id = false, val = {}}},
-{pos = Vector(0, -104, 45), ang = Angle(0, 0, 76.5), plaquetype = "bspp-cmo", bg = {id = false, val = {}}})
+PLATE:RegisterPlate("dannio_2004_xsara_picasso", -- Citroen Xsara Picasso '04
+{pos = Vector(0, 103.8, 22.5), ang = Angle(0, 180, 96), plaquetype = "avant", bg = {id = false, val = {}}},
+{pos = Vector(0, -95.9, 36), ang = Angle(0, 0, 90), plaquetype = "arriere", bg = {id = false, val = {}}})
 
 -- [D]
 
@@ -96,6 +96,14 @@ PLATE:RegisterPlate("police_nationale-banalise-peugeot_5008_2021", -- Peugeot 50
 {pos = Vector(0, 115.7, 24.5), ang = Angle(0, 180, 84), plaquetype = "avant", bg = {id = false, val = {}}},
 {pos = Vector(0, -103.5, 32), ang = Angle(0, 0, 82.5), plaquetype = "arriere", bg = {id = false, val = {}}})
 
+PLATE:RegisterPlate("dannio_2019508swnormal_gtline", -- Peugeot 508 SW '19 GT Line
+{pos = Vector(0, 115.4, 21.1), ang = Angle(0, 180, 90), plaquetype = "avant", bg = {id = false, val = {}}},
+{pos = Vector(0, -112.3, 33.8), ang = Angle(0, 0, 72.8), plaquetype = "arriere", bg = {id = false, val = {}}})
+
+PLATE:RegisterPlate("police_nationale-bac_75_n-peugeot_508_sw_2019", -- Peugeot 508 SW '19 GT Line (Police Nationale BAC 75 N)
+{pos = Vector(0, 115.4, 21.1), ang = Angle(0, 180, 90), plaquetype = "avant", bg = {id = false, val = {}}},
+{pos = Vector(0, -112.3, 33.8), ang = Angle(0, 0, 72.8), plaquetype = "arriere", bg = {id = false, val = {}}})
+
 PLATE:RegisterPlate("dannio_2021_peugeot508swpse", -- Peugeot 508 SW PSE '21
 {pos = Vector(0, 116.3, 22.3), ang = Angle(0, 180, 90), plaquetype = "avant", bg = {id = false, val = {}}},
 {pos = Vector(0, -117.3, 35), ang = Angle(0, 0, 72.8), plaquetype = "arriere", bg = {id = false, val = {}}})
@@ -119,6 +127,14 @@ PLATE:RegisterPlate("dannio_2016_renault_grand_scenic_w4", -- Renault Grand Scen
 PLATE:RegisterPlate("police_nationale-renault_grand_scenic_2016", -- Renault Grand Scenic '16 (Police Nationale Serigraphie)
 {pos = Vector(0, 117.7, 17.7), ang = Angle(0, 180, 90), plaquetype = "avant", bg = {id = false, val = {}}},
 {pos = Vector(0, -113.6, 37.7), ang = Angle(0, 0, 84), plaquetype = "arriere", bg = {id = false, val = {}}})
+
+PLATE:RegisterPlate("w4_renault_master_cmo_bspp", -- CMO - Renault Master '17
+{pos = Vector(0, 114.6, 16.3), ang = Angle(0, 180, 87), plaquetype = "avant", bg = {id = false, val = {}}},
+{pos = Vector(0, -184.6, 9.5), ang = Angle(0, 0, 90), plaquetype = "avant", bg = {id = false, val = {}}})
+
+PLATE:RegisterPlate("renault_master_-_cmo_103075219", -- CMO - Renault Master '17 (BSPP)
+{pos = Vector(0, 114.6, 16.3), ang = Angle(0, 180, 87), plaquetype = "avant", bg = {id = false, val = {}}},
+{pos = Vector(0, -184.6, 9.5), ang = Angle(0, 0, 90), plaquetype = "avant", bg = {id = false, val = {}}})
 
 PLATE:RegisterPlate("dannio_2020_renault_megane_estate", -- Renault Megane Estate '20
 {pos = Vector(0, 114.5, 14.5), ang = Angle(0, 180, 90), plaquetype = "avant", bg = {id = false, val = {}}},

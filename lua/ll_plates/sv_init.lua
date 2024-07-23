@@ -305,8 +305,8 @@ function PLATE:GetLicensePlate(ply, veh)
 	veh = isstr(veh) and veh or self:GetVehicleName(veh)
 	local veh_esc = esc(veh)
 
-	-- local res = querrow("SELECT * FROM ll_plates WHERE steamid=" .. sid .. " AND vehicle=" .. veh_esc .. ";")
-	-- if res then return res.plate end
+	local res = querrow("SELECT * FROM ll_plates WHERE steamid=" .. sid .. " AND vehicle=" .. veh_esc .. ";")
+	if res then return res.plate end
 
 	local plates = self:GetPlate(veh)
 
